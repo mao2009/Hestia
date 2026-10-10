@@ -73,6 +73,13 @@
 
 **Gate:** scheduled actions survive restart without duplicate execution.
 
+## M3 — Local LAN Skills
+- Enroll approved devices and services, expose monitored state and authorized actions in all input interfaces.
+- Provide opt-in discovery and constrained adapters for Wake-on-LAN, HTTP(S), MQTT and Home Assistant; assess SSH separately.
+- Keep LLM-generated requests behind destination, argument and action policies. See #27.
+
+**Gate:** tested device mock flows, timeout/error handling and denied unauthorized LAN actions.
+
 ## M3a — Google ecosystem and unified notifications
 - Integrate account connection/permissions, Gmail, Google Calendar, Google Tasks and selective Google Drive operations.
 - Add unified opt-in notifications for calendar/email/device events and optional Amazon shipment emails; retain Alexa in parallel during migration.
