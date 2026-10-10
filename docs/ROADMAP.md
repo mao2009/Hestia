@@ -38,6 +38,13 @@
 
 **Gate:** installable mock skills cannot obtain undeclared permissions.
 
+## M2b — MPD reference Skill
+- Validate the Skills SDK with a native-protocol MPD integration that owns connection, commands, state, events and dashboard player widgets.
+- Verify that voice, chat, schedules and UI all invoke identical policy-checked capabilities; avoid MPD-specific code in Core.
+- See #28.
+
+**Gate:** automated simulated-MPD E2E, unauthorized action tests and safe reconnection behavior.
+
 ## M2c — Secure skill runtime and management
 - Add controlled skill lifecycle, isolated execution, permissions, resource limits, compatibility checks and upgrades/rollback.
 - Add Web UI skill catalog, configuration, explicit permission grants and health checks.
