@@ -79,6 +79,11 @@ Before implementing a component, evaluate existing OSS for features, resource us
 CLI input -> mock LLM -> JSON-schema validated action plan -> policy engine -> simulated light -> audit log.
 Demonstrate compound commands, ambiguity clarification, deny-by-default, idempotency and offline behavior in tests.
 
+## Distribution (under consideration)
+- Evaluate OCI/GHCR image for Docker/Podman with optional Compose, plus native Linux self-contained binaries/systemd.
+- Neither container-only nor Docker-first distribution is approved yet. Consider device passthrough, LAN discovery, secrets, persistent storage, upgrades and N97 footprint before choosing.
+- See #30.
+
 ## Open decisions
 - Exact STT/TTS and wake-word stack after N97 benchmarking.
 - Transport/API security for remote voice satellites.
