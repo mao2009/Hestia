@@ -45,6 +45,13 @@
 
 **Gate:** security regression tests and reliable recovery after a skill crash or upgrade.
 
+## M1d — Web chat and browser voice
+- Provide a responsive chat interface, typed plans, confirmations and tool output within Web UI.
+- Add opt-in browser speech input, optionally spoken replies, unified skill access and session context.
+- Implement safe interruption/reconnect and privacy controls; see #26.
+
+**Gate:** successful browser chat-to-command E2E and speech-to-command E2E with mock integrations and authorization tests.
+
 ## M2 — Voice on N97
 - Wake-word, VAD, Japanese STT, brief TTS, microphone mute.
 - Measure idle CPU/RAM/power and speech-to-action latency on Zorin OS.
