@@ -25,6 +25,15 @@ Before implementing a component, evaluate existing OSS for features, resource us
 10. **Web UI and API**: first-class responsive dashboard, device/status panels, AI cost, schedules, suggestions and administrative tools. Access control enforced server-side and shared with voice. Prefer a resource-efficient ASP.NET Core option chosen after benchmarking.
 11. **Storage**: SQLite for policies, schedules and minimal local history, with retention and deletion controls.
 
+## Google and notification ecosystem
+- Official Google OAuth/API adapters are first-class integrations: Gmail, Calendar, Tasks and Drive. Docs/Sheets may follow after explicit demand.
+- Use incremental least-privilege scopes, read-only defaults, secure per-user token storage, disconnect/revoke support and auditable opt-in writes.
+- Expose calendar agenda, inbox summaries, task lists, integration health and unified notification center in Web UI; provide equivalent controlled voice commands.
+- Do not indiscriminately sync or index mail and Drive content. Pass only required, authorized context to external AI providers.
+- Preserve existing Alexa/SwitchBot usage during incremental migration; do not claim Alexa notification data is directly accessible. Reconstruct compatible delivery alerts from permitted sources such as email when available.
+- Notification rules require opt-in, quiet hours, deduplication and privacy controls.
+- See #17–#21.
+
 ## Trust boundaries
 - Treat transcribed speech, model output, sensor payloads, remote tool descriptions and web content as untrusted input.
 - Never grant shell execution, arbitrary network requests, file deletion or device access merely because a model requested it.
