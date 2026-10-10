@@ -25,6 +25,13 @@ Before implementing a component, evaluate existing OSS for features, resource us
 10. **Web UI and API**: first-class responsive dashboard, device/status panels, AI cost, schedules, suggestions and administrative tools. Access control enforced server-side and shared with voice. Prefer a resource-efficient ASP.NET Core option chosen after benchmarking.
 11. **Storage**: SQLite for policies, schedules and minimal local history, with retention and deletion controls.
 
+## Interactive Web chat and voice
+- The Web UI is an interactive control surface, not only a dashboard: text chat and browser microphone input invoke the same command orchestration and Skills capabilities as dedicated speaker devices.
+- Use one conversation/session and authorization model across text and speech, with explicit action previews/confirmations and auditable execution outcomes.
+- Browser audio is opt-in (push-to-talk initially), with a visible recording indicator, optional spoken responses and configurable transcript retention.
+- LLM provider secrets remain server-side; plan for microphone permission denial, browser limitations, loss of network, interrupt/cancel and mobile use.
+- See #26 and #13.
+
 ## Extensible Skills platform
 - **Skills** are versioned, optionally installable integration packages, not hardcoded provider dependencies. Hestia ships foundational capabilities but third parties can add ecosystems independently.
 - A declarative manifest defines commands, event subscriptions, schedules, optional dashboard widgets, credentials, permissions, compatibility and configuration schemas.
