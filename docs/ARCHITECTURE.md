@@ -25,6 +25,17 @@ Before implementing a component, evaluate existing OSS for features, resource us
 10. **Web UI and API**: first-class responsive dashboard, device/status panels, AI cost, schedules, suggestions and administrative tools. Access control enforced server-side and shared with voice. Prefer a resource-efficient ASP.NET Core option chosen after benchmarking.
 11. **Storage**: SQLite for policies, schedules and minimal local history, with retention and deletion controls.
 
+## Extensible Skills platform
+- **Skills** are versioned, optionally installable integration packages, not hardcoded provider dependencies. Hestia ships foundational capabilities but third parties can add ecosystems independently.
+- A declarative manifest defines commands, event subscriptions, schedules, optional dashboard widgets, credentials, permissions, compatibility and configuration schemas.
+- Every input channel (voice, Web UI, API, scheduled jobs) invokes the **same** policy-checked capabilities; no skill can bypass authorization.
+- Favor isolated, resource-bounded execution and validated IPC/structured schemas for untrusted/community skills; evaluate exact sandbox technology against N97/Zorin OS and maintenance cost.
+- Never assume MCP alone is a secure plugin sandbox: MCP is an optional transport/tool integration with separate authentication and policy checks.
+- Skills support discovery, install, upgrades, disable, revoke, uninstall and rollback; installation or LLM tool discovery does not imply granted privileges.
+- Optional constrained dashboard widgets are schema-driven and cannot execute arbitrary scripts or access unrelated data.
+- No mandatory hosted marketplace or telemetry. Account connections are consent-based, credentials stored securely outside source control.
+- See #22–#25.
+
 ## Google and notification ecosystem
 - Official Google OAuth/API adapters are first-class integrations: Gmail, Calendar, Tasks and Drive. Docs/Sheets may follow after explicit demand.
 - Use incremental least-privilege scopes, read-only defaults, secure per-user token storage, disconnect/revoke support and auditable opt-in writes.
