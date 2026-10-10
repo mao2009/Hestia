@@ -43,6 +43,14 @@ Before implementing a component, evaluate existing OSS for features, resource us
 - No mandatory hosted marketplace or telemetry. Account connections are consent-based, credentials stored securely outside source control.
 - See #22–#25.
 
+## Service-oriented Skills and MPD reference
+- A Skill encapsulates one ecosystem/service end to end: connection settings, protocol and credentials, operations, queries, event subscriptions and declarative Web UI components.
+- Hestia Core deals only with discovered typed capabilities, argument validation and shared policy checks; it has no MPD-specific logic.
+- A separate generic HTTP Skill remains useful for configured REST/HTTP endpoints but does not replace dedicated native-protocol skills.
+- **MPD Skill** is the first real reference: native Music Player Daemon protocol; play/pause/stop/next/previous, volume, playlists, current song, playback state and song-change events.
+- A Skill manifest/config schema drives installation and settings forms, while constrained widget schemas drive player controls. Do not allow arbitrary scripts through community Skill UI extensions.
+- See #28 and #22–#25.
+
 ## Google and notification ecosystem
 - Official Google OAuth/API adapters are first-class integrations: Gmail, Calendar, Tasks and Drive. Docs/Sheets may follow after explicit demand.
 - Use incremental least-privilege scopes, read-only defaults, secure per-user token storage, disconnect/revoke support and auditable opt-in writes.
