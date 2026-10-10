@@ -1,5 +1,14 @@
 # Roadmap (Draft)
 
+## Design selection gate (before large implementation)
+- Inventory reusable OSS, focusing on Home Assistant, MQTT, voice stack and dashboard options.
+- Decide what Hestia owns vs delegates; compare self-contained and Home Assistant-backed modes.
+- Record dependency licenses, interoperability and N97 CPU/RAM impact.
+- Preserve voice / Web UI / API as first-class interfaces to one command and policy engine.
+- See #16.
+
+**Gate:** documented trade-offs, bounded initial scope, and no unverified performance claims.
+
 ## M0 — Foundation
 - .NET solution, module boundaries, CI, formatting and tests.
 - Configuration, secrets strategy, logging, provider abstraction.
