@@ -52,6 +52,14 @@
 
 **Gate:** scheduled actions survive restart without duplicate execution.
 
+## M3a — Google ecosystem and unified notifications
+- Integrate account connection/permissions, Gmail, Google Calendar, Google Tasks and selective Google Drive operations.
+- Add unified opt-in notifications for calendar/email/device events and optional Amazon shipment emails; retain Alexa in parallel during migration.
+- Expose services in Web UI and voice interface using the shared policy engine.
+- See #17–#21.
+
+**Gate:** integration tests for revocation, permissions, accidental disclosure, duplicate alerts and consequential-write confirmations.
+
 ## M3b — Visual automation management
 - Create, inspect, simulate, pause and audit schedules and conditional rules.
 - Expose policy management and emergency pause in the authenticated Web UI.
