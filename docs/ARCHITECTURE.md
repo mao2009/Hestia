@@ -52,6 +52,13 @@ Before implementing a component, evaluate existing OSS for features, resource us
 - Notification rules require opt-in, quiet hours, deduplication and privacy controls.
 - See #17–#21.
 
+## Local LAN operation
+- Expose approved LAN services/devices as Skills for voice, Web chat/voice, API and scheduled automation.
+- Initially support explicit device enrollment and allowlisted Wake-on-LAN, HTTP(S), MQTT and Home Assistant operations; investigate mDNS/SSDP discovery and narrow SSH commands with per-device consent.
+- Keep credentials server-side. Deny unrestricted shell access, arbitrary LAN scanning, unrestricted URL fetching and broad network pivots from LLM tool calls.
+- Reuse the common policy engine, allowlist targets, validate arguments, audit execution and confirm disruptive operations such as poweroff/restart.
+- Previously authorized local deterministic actions should work through external LLM outages where possible. See #27.
+
 ## Trust boundaries
 - Treat transcribed speech, model output, sensor payloads, remote tool descriptions and web content as untrusted input.
 - Never grant shell execution, arbitrary network requests, file deletion or device access merely because a model requested it.
