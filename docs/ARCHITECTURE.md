@@ -6,6 +6,12 @@
 - Core command and automation logic must work headlessly without microphones.
 - Default-deny for actions not registered or authorized.
 
+## Product direction
+Hestia is an **AI-assisted household environment management platform**, with a voice speaker as one of its interfaces—not a roleplay-centric voice chatbot. Three equal entry points (voice, responsive local Web UI, and authenticated API) share the same command, policy, and automation services. Primary non-functional goals: low resource use on N97-class Linux, flexible natural-language operation, and proactive but bounded optimization.
+
+## Reuse-first architecture decision
+Before implementing a component, evaluate existing OSS for features, resource use on N97, upkeep, API stability, and licenses. **Home Assistant is the first integration and reuse candidate** for device discovery, state, automations and integrations. Do not copy its entire feature set into Hestia or silently require a separate large stack: benchmark direct integration versus a self-contained lightweight mode, document trade-offs, and keep integrations replaceable. Evaluate MQTT and MCP as interoperable adapters. Use existing STT/TTS/wake-word components where feasible.
+
 ## Modules
 1. **Host**: .NET worker/API, configuration, structured logging, lifecycle management (systemd).
 2. **Input adapters**: CLI/text first; wake-word, VAD, STT and TTS later. Avoid always-streaming audio to external services.
@@ -16,7 +22,8 @@
 7. **Automation**: persistent scheduler, event ingestion and rule engine; no mandatory LLM call per tick.
 8. **Optimization**: suggest changes from measurements, preferences and goals; act only within a user-approved policy envelope.
 9. **Integrations**: simulated devices first, then Home Assistant, MQTT, and MCP where useful.
-10. **Storage**: SQLite for policies, schedules and minimal local history, with retention and deletion controls.
+10. **Web UI and API**: first-class responsive dashboard, device/status panels, AI cost, schedules, suggestions and administrative tools. Access control enforced server-side and shared with voice. Prefer a resource-efficient ASP.NET Core option chosen after benchmarking.
+11. **Storage**: SQLite for policies, schedules and minimal local history, with retention and deletion controls.
 
 ## Trust boundaries
 - Treat transcribed speech, model output, sensor payloads, remote tool descriptions and web content as untrusted input.
