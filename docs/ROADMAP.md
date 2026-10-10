@@ -9,6 +9,11 @@
 
 **Gate:** documented trade-offs, bounded initial scope, and no unverified performance claims.
 
+## Distribution decision (pending)
+- Compare OCI containers (Docker/Podman), Compose deployment and native Linux packaging.
+- Validate audio, Bluetooth, multicast/LAN discovery, persistence and N97 resource cost before selecting defaults.
+- See #30. **Status: under consideration.**
+
 ## M0 — Foundation
 - .NET solution, module boundaries, CI, formatting and tests.
 - Configuration, secrets strategy, logging, provider abstraction.
