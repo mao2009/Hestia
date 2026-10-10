@@ -31,6 +31,20 @@
 
 **Gate:** safe login, settings management and access-denial tests.
 
+## M1c — Skills SDK
+- Specify versioned manifests and typed interfaces for commands, events, automations and integration-specific configuration.
+- Prove core runtime and shared policy boundary with an isolated mock skill.
+- See #22.
+
+**Gate:** installable mock skills cannot obtain undeclared permissions.
+
+## M2c — Secure skill runtime and management
+- Add controlled skill lifecycle, isolated execution, permissions, resource limits, compatibility checks and upgrades/rollback.
+- Add Web UI skill catalog, configuration, explicit permission grants and health checks.
+- See #23–#24.
+
+**Gate:** security regression tests and reliable recovery after a skill crash or upgrade.
+
 ## M2 — Voice on N97
 - Wake-word, VAD, Japanese STT, brief TTS, microphone mute.
 - Measure idle CPU/RAM/power and speech-to-action latency on Zorin OS.
